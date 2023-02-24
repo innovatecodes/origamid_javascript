@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Origamid | HTML e CSS para Iniciantes | Exercício JavaScript 3
+    </title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        max-width: 480px;
+        height: 50vh;
+        background-color: #ececec;
+        color: #575656;
+        font-weight: bold;
+        font-family: Georgia, "Times New Roman", Times, serif;
+        margin: 50px auto;
+        position: relative;
+      }
+
+      .container #botao {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 160px;
+        text-align: center;
+        outline: none;
+        border: 3px solid currentColor;
+        color: inherit;
+        font-weight: inherit;
+        font-family: inherit;
+        padding: 20px 8px;
+        background-color: #999;
+        border-radius: 4px;
+      }
+
+      #manipularTxt {
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+        margin: auto;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <button id="botao" /*onclick="somar();*/">Adicionar</button>
+      <div id="manipularTxt">0</div>
+    </div>
+    <script>
+      //      1 - Crie um botão com nome de Adicionar.
+      // 2 - Adicione uma função (somar) ao clique desse botão
+      // 3 - Só adicione a função se o botão existir na tela.
+      // 4 - Crie uma div com o texto 0 dentro dela: <div>0</div>
+      // 5 - Na função do botão, pegue o total que estiver dentro da div e adicione + 1.
+      // 6 - Mude o valor da div para o novo total.
+      // 7 - Mude o valor apenas se o total for menor que 10.
+      // 8 - Quando não for mais possível adicionar, mostre uma mensagem no console.
+
+      const div = document.getElementById("manipularTxt");
+
+      function somar(){
+        let valorInternoDiv = div.textContent;
+        if (valorInternoDiv < 10){
+          div.innerHTML = ++valorInternoDiv;
+        }else{
+          const msg = (`Feito! O valor é maior que ${valorInternoDiv}.`);
+          this.style.width = "240px";
+          this.style.transition = ".2s ease-in";
+          return this.innerHTML = msg;
+        
+        }
+      }
+     document.getElementById("botao").addEventListener("click", somar);
+    </script>
+  </body>
+</html>

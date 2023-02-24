@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Origamid | HTML e CSS para Iniciantes | Exercício JavaScript 2
+    </title>
+    <style>
+      html {
+        cursor: none;
+      }
+
+      body {
+        overflow-x: hidden;
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        max-width: 100%;
+        height: 100vh;
+        background-color: #ececec;
+        color: #222;
+        margin: 0 auto;
+        position: relative;
+        padding: 15px;
+      }
+
+      .container #box {
+        width: 16px;
+        height: 16px;
+        background-color: #999;
+        border-radius: 50%;
+        position: absolute;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div id="box"></div>
+    </div>
+    <script>
+      // 1 - Crie um círculo com uma div de width: 16px, height: 16px e background: #999;
+      // 2 - Adicione ao window uma função que ocorre ao "mousemove";
+      // 3 - Na função mude as propriedades top e left do círculo com base no mouse.
+      // 4 - Você pode usar elemento.style.propriedade para mudar o CSS diretamente.
+      let alterarCordenadas = document.getElementById("box");
+      window.addEventListener("mousemove", (event) => {
+        alterarCordenadas.style.top = event.y + "px";
+        alterarCordenadas.style.left = event.x + "px";
+        console.log(`Eixo X: ${event.x}`);
+        console.log(`Eixo Y: ${event.y}`);
+      });
+    </script>
+  </body>
+</html>
